@@ -3,151 +3,352 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elegant Emporium - Luxury Watches</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="images/logo.png" type="image/png">
+    <title>Elegant Emporium | Premium Watches</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/logo-icon.png" type="image/png">
 </head>
 <body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div class="toast-notification"></div>
+
     <!-- Header -->
-    <header>
-        <div class="logo-container">
-            <img src="images/logo.png" alt="Elegant Emporium Logo" class="logo">
-            <h1>Elegant Emporium</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#shop">Watches</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li class="cart-icon">
-                    <a href="#cart" id="cart-toggle">
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-wrapper">
+                <img src="assets/logo-full.png" alt="Elegant Emporium" class="logo">
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#collection" class="nav-link">Collection</a></li>
+                    <li><a href="#about" class="nav-link">Our Story</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+                <div class="cart-icon-wrapper">
+                    <button class="cart-btn">
                         <i class="fas fa-shopping-bag"></i>
                         <span class="cart-count">0</span>
-                    </a>
-                </li>
+                    </button>
+                </div>
+                <button class="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <img src="assets/logo-full.png" alt="Elegant Emporium" class="mobile-logo">
+            <button class="close-mobile-menu">&times;</button>
+        </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="#home" class="mobile-nav-link active">Home</a></li>
+                <li><a href="#collection" class="mobile-nav-link">Collection</a></li>
+                <li><a href="#about" class="mobile-nav-link">Our Story</a></li>
+                <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
             </ul>
         </nav>
-    </header>
+        <div class="mobile-social">
+            <a href="https://instagram.com/elegantemporium" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/923484758378" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+    <div class="mobile-menu-overlay"></div>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-content">
-            <h2>Timeless Elegance on Your Wrist</h2>
-            <p>Premium Daniel Wellington watches at exceptional value</p>
-            <a href="#shop" class="btn">Shop Now</a>
+        <div class="hero-slider">
+            <div class="hero-slide active">
+                <div class="hero-content">
+                    <h1 class="hero-title">Timeless Elegance</h1>
+                    <p class="hero-subtitle">Discover our curated collection of Daniel Wellington watches</p>
+                    <a href="#collection" class="hero-btn">View Collection</a>
+                </div>
+                <div class="hero-image">
+                    <img src="assets/hero-watch-1.png" alt="Premium Watch">
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
         </div>
     </section>
 
-    <!-- Watch Collection -->
-    <section class="featured-products" id="shop">
-        <h2>Our Watch Collection</h2>
-        <div class="products-grid">
-            <!-- Product 1 -->
+    <!-- Collection Section -->
+    <section class="collection-section" id="collection">
+        <div class="section-header">
+            <h2 class="section-title">Our Collection</h2>
+            <p class="section-subtitle">Premium watches at $69 each</p>
+        </div>
+        
+        <div class="collection-grid">
+            <!-- Watch 1 -->
             <div class="product-card">
-                <img src="images/dw-classic-sheffield.jpg" alt="Classic Sheffield Watch" class="product-image">
-                <h3>Classic Sheffield Watch</h3>
-                <p class="price">$69.00</p>
-                <div class="product-description">
-                    <p>Timeless minimalist design with 36mm case and genuine leather strap. Perfect for everyday elegance.</p>
+                <div class="product-badge">Bestseller</div>
+                <div class="product-image-wrapper">
+                    <img src="assets/watch-1.jpg" alt="Classic Sheffield Watch" class="product-image">
+                    <div class="product-actions">
+                        <button class="quick-view" data-id="101">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button class="add-to-wishlist" data-id="101">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
                 </div>
-                <button class="add-to-cart" data-id="101" data-name="Classic Sheffield Watch" data-price="69.00" data-image="images/dw-classic-sheffield.jpg">Add to Cart</button>
+                <div class="product-details">
+                    <h3 class="product-title">Classic Sheffield</h3>
+                    <div class="product-price">$69.00</div>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(42)</span>
+                    </div>
+                    <button class="add-to-cart-btn" data-id="101" data-name="Classic Sheffield Watch" data-price="69.00" data-image="assets/watch-1.jpg">
+                        Add to Cart
+                    </button>
+                </div>
             </div>
             
-            <!-- Product 2 -->
+            <!-- Watch 2 -->
             <div class="product-card">
-                <img src="images/dw-petite-melrose.jpg" alt="Petite Melrose Watch" class="product-image">
-                <h3>Petite Melrose Watch</h3>
-                <p class="price">$69.00</p>
-                <div class="product-description">
-                    <p>28mm slim case with mesh metal bracelet. A delicate statement piece for refined wrists.</p>
+                <div class="product-image-wrapper">
+                    <img src="assets/watch-2.jpg" alt="Petite Melrose Watch" class="product-image">
+                    <div class="product-actions">
+                        <button class="quick-view" data-id="102">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button class="add-to-wishlist" data-id="102">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
                 </div>
-                <button class="add-to-cart" data-id="102" data-name="Petite Melrose Watch" data-price="69.00" data-image="images/dw-petite-melrose.jpg">Add to Cart</button>
+                <div class="product-details">
+                    <h3 class="product-title">Petite Melrose</h3>
+                    <div class="product-price">$69.00</div>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(36)</span>
+                    </div>
+                    <button class="add-to-cart-btn" data-id="102" data-name="Petite Melrose Watch" data-price="69.00" data-image="assets/watch-2.jpg">
+                        Add to Cart
+                    </button>
+                </div>
             </div>
             
-            <!-- Product 3 -->
+            <!-- Watch 3 -->
             <div class="product-card">
-                <img src="images/dw-iconic-link.jpg" alt="Iconic Link Watch" class="product-image">
-                <h3>Iconic Link Watch</h3>
-                <p class="price">$69.00</p>
-                <div class="product-description">
-                    <p>Signature 40mm case with stainless steel bracelet. Water resistant with scratch-resistant glass.</p>
+                <div class="product-badge">New</div>
+                <div class="product-image-wrapper">
+                    <img src="assets/watch-3.jpg" alt="Iconic Link Watch" class="product-image">
+                    <div class="product-actions">
+                        <button class="quick-view" data-id="103">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button class="add-to-wishlist" data-id="103">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
                 </div>
-                <button class="add-to-cart" data-id="103" data-name="Iconic Link Watch" data-price="69.00" data-image="images/dw-iconic-link.jpg">Add to Cart</button>
+                <div class="product-details">
+                    <h3 class="product-title">Iconic Link</h3>
+                    <div class="product-price">$69.00</div>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(28)</span>
+                    </div>
+                    <button class="add-to-cart-btn" data-id="103" data-name="Iconic Link Watch" data-price="69.00" data-image="assets/watch-3.jpg">
+                        Add to Cart
+                    </button>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section class="about" id="about">
-        <div class="about-content">
-            <h2>About Elegant Emporium</h2>
-            <p>We specialize in bringing you premium watches at accessible prices. Our curated collection of Daniel Wellington timepieces combines Scandinavian minimalism with exceptional craftsmanship.</p>
-            <p>Every watch in our collection is authentic and comes with a 1-year warranty.</p>
-        </div>
-        <div class="about-image">
-            <img src="images/watch-display.jpg" alt="Watch Display">
+    <section class="about-section" id="about">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="assets/about-image.jpg" alt="Our Story">
+            </div>
+            <div class="about-content">
+                <h2 class="section-title">Our Story</h2>
+                <p class="about-text">
+                    Elegant Emporium was founded with a passion for timeless design and exceptional craftsmanship. 
+                    We curate only the finest watches that combine Scandinavian minimalism with premium quality.
+                </p>
+                <p class="about-text">
+                    Each timepiece in our collection is selected for its elegant design, reliable performance, 
+                    and outstanding value. We believe luxury should be accessible without compromise.
+                </p>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">3K+</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Authentic</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Shopping Cart -->
-    <div class="cart-sidebar" id="cart">
+    <div class="cart-sidebar">
         <div class="cart-header">
             <h3>Your Shopping Bag</h3>
-            <button class="close-cart">&times;</button>
+            <button class="close-cart-btn">&times;</button>
         </div>
+        
         <div class="cart-items">
-            <!-- Cart items appear here -->
+            <!-- Cart items will be added here dynamically -->
+            <div class="empty-cart-message">
+                <i class="fas fa-shopping-bag"></i>
+                <p>Your bag is empty</p>
+            </div>
         </div>
-        <div class="cart-total">
-            <h4>Total: $<span id="cart-total-price">0.00</span></h4>
-        </div>
-        <div class="cart-actions">
-            <button class="btn checkout-btn">Proceed to Checkout</button>
-            <a href="https://wa.me/923484758378?text=I'm%20interested%20in%20your%20watches%20on%20Elegant%20Emporium" class="btn whatsapp-btn">
-                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+        
+        <div class="cart-summary">
+            <div class="cart-subtotal">
+                <span>Subtotal</span>
+                <span class="subtotal-amount">$0.00</span>
+            </div>
+            <div class="cart-shipping">
+                <span>Shipping</span>
+                <span>Calculated at checkout</span>
+            </div>
+            <div class="cart-total">
+                <span>Total</span>
+                <span class="total-amount">$0.00</span>
+            </div>
+            
+            <button class="checkout-btn">Proceed to Checkout</button>
+            <a href="https://wa.me/923484758378" class="whatsapp-checkout-btn">
+                <i class="fab fa-whatsapp"></i> Checkout via WhatsApp
             </a>
+            
+            <div class="continue-shopping">
+                <button class="continue-shopping-btn">Continue Shopping</button>
+            </div>
         </div>
     </div>
     <div class="cart-overlay"></div>
 
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#shop">Watches</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Contact Us</h4>
-                <p><i class="fas fa-phone-alt"></i> +92 348 4758378</p>
-                <p><i class="fas fa-envelope"></i> info@elegantemporium.com</p>
-                <div class="social-icons">
-                    <a href="https://instagram.com/elegantemporium" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://wa.me/923484758378" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                </div>
-            </div>
-            <div class="footer-section">
-                <h4>Newsletter</h4>
-                <p>Subscribe for new arrivals and offers</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Your email address" required>
-                    <button type="submit">Subscribe</button>
-                </form>
+    <!-- Quick View Modal -->
+    <div class="quick-view-modal">
+        <div class="quick-view-container">
+            <button class="close-quick-view">&times;</button>
+            <div class="quick-view-content">
+                <!-- Content loaded dynamically -->
             </div>
         </div>
+    </div>
+    <div class="quick-view-overlay"></div>
+
+    <!-- Footer -->
+    <footer class="main-footer" id="contact">
+        <div class="footer-container">
+            <div class="footer-column">
+                <img src="assets/logo-full.png" alt="Elegant Emporium" class="footer-logo">
+                <p class="footer-about">
+                    Curators of fine timepieces that combine elegance with exceptional value.
+                </p>
+                <div class="footer-social">
+                    <a href="https://instagram.com/elegantemporium" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/923484758378" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h4 class="footer-title">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#collection">Collection</a></li>
+                    <li><a href="#about">Our Story</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4 class="footer-title">Customer Service</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Size Guide</a></li>
+                    <li><a href="#">Care Instructions</a></li>
+                    <li><a href="#">Track Order</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4 class="footer-title">Contact Info</h4>
+                <ul class="footer-contact">
+                    <li>
+                        <i class="fas fa-phone-alt"></i>
+                        <span>+92 348 4758378</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span>info@elegantemporium.com</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Lahore, Pakistan</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
         <div class="footer-bottom">
-            <p>&copy; 2023 Elegant Emporium. All rights reserved.</p>
+            <div class="footer-bottom-container">
+                <p>&copy; 2023 Elegant Emporium. All rights reserved.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
